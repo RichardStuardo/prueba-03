@@ -1,0 +1,17 @@
+<%= render 'layouts/navbar'%>
+<div class="container">	
+	<div class="well">
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<h2><%= @todo.description%></h2>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<% if  @todo.completed == true %>
+				<h3>Tarea Completada </h3>
+					<% else%>
+				<h3>Tarea No Completada </h3>
+					<% end%>
+			</div>
+		</div>
+	</div>
+</div>

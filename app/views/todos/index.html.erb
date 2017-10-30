@@ -1,0 +1,20 @@
+<%= render 'layouts/navbar'%>
+<div class="container">
+	<% @todos.each do |t| %>
+		<div class="well">
+			<div class="row">
+				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+					<%= link_to t.description, t %>
+					
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<%= link_to "Completado", completed_path(t), class: 'btn btn-success' %>
+					<%= link_to "Edit", edit_path(t), class: 'btn btn-warning' %>
+					<%= link_to 'Destroy', t,class: 'btn btn-danger', method: :delete, data: { confirm: 'Estás seguro?' } %>
+				</div>	
+			</div>
+		</div>
+	<% end %>
+	<%= link_to "Crear ToDo", todos_new_path, class: 'btn btn-primary' %>
+	
+</div>

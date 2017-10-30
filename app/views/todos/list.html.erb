@@ -1,0 +1,29 @@
+<%= render 'layouts/navbar'%>
+<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<h1>ToDo Completados</h1>
+						 
+		        <% @todo.each do |t| %>
+			     <% if t.completed? %>
+				     <div class="well">
+					       <%= t.description %>
+					 </div>	
+			     <% end %>
+
+			     <% end %>
+			</div>
+			
+			
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<h1>ToDo NO Completados</h1>
+				 <% @todo.each do |t| %>
+				     <% if t.completed == false or t.completed == nil%>
+					  	<div class="well">
+					       <%= t.description %>
+					 	</div>	
+				     <%end%>
+			     <%end%>
+	  		</div>
+		</div>
+</div>
